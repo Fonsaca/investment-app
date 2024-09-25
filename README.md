@@ -24,4 +24,3 @@ For further understanding of the project, a technical document will be available
 
 ### Technology
 * .NET 8
-* Angular 18
