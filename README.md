@@ -20,7 +20,7 @@ But how will the investor make his investment? How conservative is He ? Well, ma
 With a plan defined, the investor shall input their asset transactions to fill the database and get insights of their investment. That is the second functionality.
 
 ### Documentation
-For further understanding of the project see the [document](investment-app-spec-v1.0.pdf)
+For further understanding of the project see the [document](investment-app-spec.pdf)
 
 ### Technology
 * .NET 8
