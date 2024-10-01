@@ -12,20 +12,15 @@ namespace Investment.Core.Domain
 
         public string Title { get; internal set; } = string.Empty;
 
-        public double MoneyGoal { get; internal set; }
+        public string Currency { get; internal set; } = string.Empty; //TODO validate using some resource file
+
+        public decimal MoneyGoal { get; internal set; }
 
         public string Details { get; internal set; } = string.Empty;
 
 
-        private List<CategoryGoal> _categoryGoals = new List<CategoryGoal>();
-        public IReadOnlyList<CategoryGoal> CategoryGoals
-        {
-            get { return _categoryGoals.AsReadOnly(); }
-        }
-
-
-        private List<AssetGoal> _assetGoals = new List<AssetGoal>();
-        public IReadOnlyList<AssetGoal> AssetGoals
+        private List<WalletAsset> _assetGoals = new List<WalletAsset>();
+        public IReadOnlyList<WalletAsset> AssetGoals
         {
             get { return _assetGoals.AsReadOnly(); }
         }

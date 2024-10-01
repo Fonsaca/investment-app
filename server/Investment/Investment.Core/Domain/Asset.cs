@@ -23,7 +23,7 @@ namespace Investment.Core.Domain
         /// 
         /// For equities this property shall be null.
         /// </summary>
-        public string? Profitability { get; set; }
+        public decimal InterestRate { get; internal set; }
 
         /// <summary>
         /// Example: Fixed Income, Equities, Real State, Derivatives, Crypto..
@@ -31,17 +31,17 @@ namespace Investment.Core.Domain
         public string Category { get; private set; }
 
         /// <summary>
-        /// Treasure Bonds, Munis, CD...
-        /// </summary>
-        public string Type { get; private set; }
-
-        /// <summary>
         /// Date when the investment expires and the cash is refunded
         /// </summary>
-        public DateOnly? MaturityDate { get; set; }
+        public DateOnly? MaturityDate { get; internal set; }
+
+        /// <summary>
+        /// Host institution of the asset
+        /// </summary>
+        public Institution Exchange { get; private set; }
 
 
-        public Asset(string code, string name, string category, string type)
+        public Asset(string code, string name, string category, Institution exchange)
         {
 
             if(string.IsNullOrEmpty(code))
@@ -53,13 +53,14 @@ namespace Investment.Core.Domain
             if (string.IsNullOrEmpty(category))
                 throw new ArgumentNullException("category");
 
-            if (string.IsNullOrEmpty(type))
-                throw new ArgumentNullException("type");
+            if (exchange==default)
+                throw new ArgumentNullException("exchange");
+
 
             Code = code;
             Name = name;
             Category = category;
-            Type = type;
+            Exchange = exchange;
         }
     }
 }
