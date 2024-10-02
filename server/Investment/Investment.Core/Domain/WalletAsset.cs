@@ -40,7 +40,7 @@ namespace Investment.Core.Domain
         }
 
 
-        public WalletAsset(Asset asset, string currency) : base(asset.Code, asset.Name, asset.Category)
+        public WalletAsset(Asset asset, string currency) : base(asset.Code, asset.Name, asset.Category, asset.Exchange)
         {
             Currency = currency;
         }

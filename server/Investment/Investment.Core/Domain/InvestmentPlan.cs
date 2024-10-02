@@ -33,20 +33,5 @@ namespace Investment.Core.Domain
 
 
 
-        internal void AddCategoryGoal(string category, short percentage) {
-            if (goal != null)
-                _categoryGoals.Add(goal);
-        }
-
-        internal void AddAssetGoal(Asset asset, short percentage)
-        {
-            if (asset != null)
-            {
-                var goal = new AssetGoal()
-                {
-                    Percentage = percentage
-                }
-            }
-        }
     }
 }
